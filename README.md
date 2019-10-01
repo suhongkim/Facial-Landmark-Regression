@@ -1,87 +1,39 @@
-# Facial Landmark Detection
-
-One Paragraph of project description goes here
+# 3D Mesh Decimation
+Quadric-based Mesh Decimation Via Multiple Choices Algorithm
 
 ## Getting Started
+This code is the impelementation of a mesh decimation algorithm based on the quadric-based errors with winged edge data structure. Since the input mesh is assumed as a closed manifold triangle mesh, I've implemented only edge collapse, not vertex pair collapse. Multiple choice scheme is used for the outer optimization. 
+ 
+ This code is implemented based on two papers:["Surface Simplification Using Quadric Error Metrics"](http://mgarland.org/files/papers/quadrics.pdf),and ["Fast Mesh Decimation by Multiple-Choice Techniques"](http://www.graphics.rwth-aachen.de/media/papers/mcd_vmv021.pdf). 
+ Also, [NanoGUI](https://nanogui.readthedocs.io/en/latest/) is used to render the object, the first sample codes for nanugui is provided by [Wallace Lira](http://www.sfu.ca/~wpintoli/) but most of them are modified in this code.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
+This code is implemented with C++11 and tested on Linux 16.04. Nanogui is already included in this code directory. 
 
-What things you need to install the software and how to install them
-
+### Run
 ```
-Give examples
+cd <path-to-folder>
+cmake .
+make
+./mcaq
 ```
+you can import example meshes from ./objs directory using NanoGUI interface.
 
-### Installing
+## Result
+Before decimation,
+![](./screenshots/nanogui1.png)
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+After decimation, 
+![](./screenshots/nanogui2.png)
 
-```
-Give the example
-```
 
-And repeat
 
-```
-until finished
-```
+## Author
 
-End with an example of getting some data out of the system or using it for a little demo
+Suhong Kim – [@github](https://github.com/suhongkim) – suhongkim11@gmail.com \
+Distributed under the MIT license. See the [LICENSE.md](LICENSE.md) file for details
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+## Inspiration
+This project is done  for CMPT764 ["Geometry Modeling in Computer Graphics"](https://www2.cs.sfu.ca/~haoz/teaching/cmpt464/index.html)(Spring2019) at SFU. 
