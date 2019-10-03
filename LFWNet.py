@@ -1,6 +1,5 @@
 # ------------------------------------------------------------------------------------------------------------
 # https://github.com/pytorch/vision/blob/master/torchvision/models/alexnet.py
-# https://csil-git1.cs.surrey.sfu.ca/luweiy/Tango/blob/master/core_dl/base_net.py
 
 import torch
 import torch.nn as nn # neural network lib.
